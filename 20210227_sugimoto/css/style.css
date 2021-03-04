@@ -544,33 +544,25 @@
       height: auto;
     }
 
-    .service{
-      /* height: 300vw; */
-    }
+   
 
-    .service-img {
-      /* position: relative; */
+    .service-img{
       margin: 0 auto;
       width: 90%;
-      
     }
 
     .service-content_inner{
-      /* position: absolute; */
       width: 90%;
       top: 80%;
       left: 5%;
     }
 
     .service-img_second{
-      /* position: relative; */
-      /* width: auto; */
       height: auto;
       margin: 40% auto;
     }
 
     .service-content_inner-second {
-      /* position: absolute; */
       margin: -35% auto;
     }
 
