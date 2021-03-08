@@ -547,9 +547,14 @@
       padding-right: 10%;
     }
 
+    .mission-content {
+      width: 80%;
+    }
+
     .mission-img {
       width: 40%;
       height: auto;
+      margin-bottom: 3%;
     }
 
     .service-img{
