@@ -107,8 +107,7 @@ input, select {
 }
 
 .header-logo {
-    margin-left: 20px;
-    font-size: 25px;
+    margin-left: 30px;
 }
 
 .header-wrap {
@@ -184,7 +183,7 @@ input, select {
     line-height: 25px;
 }
 
-/* サービス */
+/* ---------サービス------------ */
 
 .service-title {
     text-align: center;
@@ -197,50 +196,20 @@ input, select {
     align-items: center;
     justify-content:space-between;
     flex-wrap: wrap;
-    margin: 0 350px;
-}
-
-.service1,.service2,.service3,.service4 img{
-    width: 500px;
-}
-
-.service1,.service2{
-    margin-right: 20px;
-}
-.service1{
+    width: 80%;
     margin: 0 auto;
 }
 
-.service3,.service4{
-    margin: 20px 0 0 26px;
+.service-wrap{
+    width: 45%;
 }
 
-.service4{
-    margin-left: 52%;
-}
-
-.service-text1{
-    margin-top: 5px;
+.service-wrap img{
     width: 100%;
-    line-height: 150%;
 }
 
-.service-text2 {
-    margin-top: 5px;
-    width: 100%;
-    line-height: 150%;
-}
-
-.service-text3 {
-    margin-top: 5px;
-    width: 100%;
-    line-height: 150%;
-}
-
-.service-text4 {
-    margin-top: 5px;
-    width: 100%;
-    line-height: 150%;
+.service-text {
+    margin: 20px 0;
 }
 
 .service-cach {
@@ -250,9 +219,9 @@ input, select {
 } 
 
 .service-botan {
-    margin: 50px 12% 100px 38%;
-    padding: 20px 70px;
-    border: none;
+    width: 300px;
+    line-height: 50px;
+    margin: 50px auto;
     border-radius: 3px;
     background: rgb(182, 3, 3);
     text-align: center;
@@ -263,6 +232,10 @@ input, select {
     font-weight: bold;
     color: #f2f2f2;
     text-decoration: none;
+}
+
+.service-botan:hover {
+    opacity: 0.7;
 }
 
 /* ----------ニュース----------- */
@@ -300,6 +273,10 @@ input, select {
     color: #f2f2f2;
 }
 
+.news-botan:hover {
+    opacity: 0.7;
+}
+
 .news-content {
     padding-top: 10px;
     margin-left: 20%;
@@ -318,6 +295,10 @@ input, select {
     color: #000
 }
 
+.news-text:hover {
+    opacity: 0.7;
+}
+
 .text-style {
     font-weight: bold;
 }
@@ -334,7 +315,16 @@ input, select {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: auto 19% auto 19%;
+    margin: auto 18% auto 20%;
+}
+
+.blog img{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.blog img:hover{
+    opacity: 0.7;
 }
 
 .blog-text {
@@ -348,11 +338,15 @@ input, select {
     color: #000;
 }
 
+.blog-text:hover {
+    opacity: 0.7;
+}
+
 .blog-botan {
-    margin: 50px 42% 100px 42%;
+    margin: 50px 42% 100px 41%;
     text-align: center;
-    padding: 20px 70px;
-    border: none;
+    width: 300px;
+    line-height: 50px;
     border-radius: 3px;
     background: rgb(182, 3, 3);
 }
@@ -362,6 +356,10 @@ input, select {
     font-size: 15px;
     font-weight: bold;
     color: #f2f2f2;
+}
+
+.blog-botan:hover {
+    opacity: 0.7;
 }
 
 /* -------company-------- */
@@ -409,6 +407,14 @@ input, select {
     margin-top: 15%;
 }
 
+.company-section1:hover {
+    opacity: 0.7;
+}
+
+.company-section2:hover {
+    opacity: 0.7;
+}
+
 /* -------お問い合わせ-------- */
 
 #info {
@@ -428,9 +434,8 @@ input, select {
 
 .info-botan {
     margin: 30px auto;
-    width: 200px;
-    padding: 20px 45px;
-    border: none;
+    width: 300px;
+    line-height: 50px;
     border-radius: 3px;
     background: rgb(182, 3, 3);
 }
@@ -440,6 +445,10 @@ input, select {
     font-size: 15px;
     font-weight: bold;
     color: #f2f2f2;
+}
+
+.info-botan:hover{
+    opacity: 0.7;
 }
 
 /* ---------フッター---------- */
@@ -477,3 +486,117 @@ input, select {
 .footer-link li + li{
     border-left: 1px solid #f2f2f2;
 } 
+
+/* ----------レスポンシブデザイン------------- */
+
+@media screen and (max-width: 768px) {
+
+    /* -----------ハンバーガーメニュー---------- */
+
+    #hamburger {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        cursor: pointer;
+        z-index: 100;
+        top: 15px;
+        right: 20px;
+        transition: 0.5s;
+    }
+
+    #hamburger span {
+        position: absolute;
+        left: 2px;
+        width: 30px;
+        height: 2px;
+        background-color: #000;
+        transition: 0.8;
+    }
+
+    #hamburger span:nth-of-type(1) {
+        top: 10px;
+    }
+
+    #hamburger span:nth-of-type(2) {
+        top: 20px;
+    }
+
+    #hamburger span:nth-of-type(3) {
+        top: 30px;
+    }
+
+    .header-nav {
+        display: none;
+    }
+    
+    /* -----------キャッチコピー----------- */
+
+    .catchcopy-text {
+        text-align: center;
+        width: 70%;
+        line-height: 7vh;
+        padding: 35% 0 0 15%;
+    }
+
+    .catchcopy-text1,.catchcopy-text2{
+        position: static;
+    }
+
+    /* ---------ミッション--------- */
+
+    .mission {
+        height: 45vh;
+    }
+
+    .service-content{
+        display: block;
+    }
+
+    .service-wrap {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .blog-content {
+        display: block;
+    }
+    
+    .blog-botan { 
+        margin: 5% auto 10% auto;
+    }
+
+    .info-content {
+        padding-top: 15%
+    }
+
+    /* ---------フッター----------- */
+
+    #footer {
+        height: 50vh;
+    }
+    
+    .footer-content {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer-logo{
+        padding: 10% 10% 0 0;
+    }
+
+    .footer-link ul{
+        display: block;
+        line-height: 300%;
+        text-align: center;
+    }
+
+    .footer-link li a{
+        margin-left: 75%;
+        padding-bottom: 10%;
+        
+    }
+
+    .footer-link li + li{
+        border-left: none;
+    }
+}
