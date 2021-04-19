@@ -1,24 +1,30 @@
 <template>
     <div id="app">
-        <input type="text" placeholder="郵便番号を入力" v-model="zipcode">
+        <p>{{message}}</p>
+        <input type="text" placeholder="郵便番号を入力" v-model="zipcode"/>
         <button @click="getAddress">住所自動入力</button>
         <p>Address: {{Address}}</p>
     </div>
 </template>
 
 <script>
-import axios from "axios";
+const axios = require('axios');
+
+let url = 'http://zipcloud.ibsnet.co.jp/api/search?zipcode='
+
 export default {
     data() {
-        return{
-           address: ""
-        }
+      return{
+          zipcode: '',
+          Address: {}
+      }
     },
-    methods: {
-      getAddress() {
-         this.$emit("getzipcode", this.zipcode);
-         this.zipcode = "";
-     }
+methods: {
+    getAddress() {
+       axios.get(url + this.zipcode).then((res) => {
+         this.Address = res.data.results[0];
+       })
     }
-};
+  }
+}
 </script>
