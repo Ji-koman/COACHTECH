@@ -1,12 +1,7 @@
-import axios from "axios"; 
+import Vue from 'vue'
+import App from './App.vue'
 
-
-axios.interceptors.request.use(config => {
-    console.log(config);
-    return config;
-})
-
-axios.interceptors.response.use(res => {
-    console.log(res);
-    return res;
-})
+Vue.config.productionTip = false
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
