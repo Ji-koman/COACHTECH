@@ -14,11 +14,11 @@ let url = 'http://zipcloud.ibsnet.co.jp/api/search?zipcode='
 
 export default {
     data() {
-      return{
+      return {
           zipcode: '',
           Address: {}
-      }
-    },
+    }
+  },
 methods: {
     getAddress() {
        axios.get(url + this.zipcode).then((res) => {
@@ -26,5 +26,5 @@ methods: {
        })
     }
   }
-}
+};
 </script>
