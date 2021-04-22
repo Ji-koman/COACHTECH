@@ -3,7 +3,7 @@
         <p>{{message}}</p>
         <input type="text" placeholder="郵便番号を入力" v-model="zipcode"/>
         <button @click="getAddress">住所自動入力</button>
-        <p>Address: {{Address}}</p>
+        <p>Address: {{Address['Address']}}</p>
     </div>
 </template>
 
