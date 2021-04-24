@@ -10,7 +10,7 @@
 <script>
 const axios = require('axios');
 
-let url = 'http://zipcloud.ibsnet.co.jp/api/search?zipcode='
+let url = 'https://apis.postcode-jp.com/api/v3/postcodes/zipcode?SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH='
 
 export default {
     data() {
