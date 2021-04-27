@@ -10,7 +10,7 @@
 <script>
 const axios = require('axios');
 
-let url = 'https://apis.postcode-jp.com/api/v3/postcodes/zipcode?SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH='
+let url = 'https://apis.postcode-jp.com/api/v4/postcodes/postcodes?SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH='
 
 export default {
     data() {
@@ -22,7 +22,7 @@ export default {
 methods: {
     getAddress() {
        axios.get(url + this.zipcode).then((res) => {
-         this.Address = res.data.results[0];
+         this.Address = res.data;
        })
     }
   }
