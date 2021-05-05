@@ -2,29 +2,31 @@
     <div id="app">
         <p>{{message}}</p>
         <input type="text" placeholder="郵便番号を入力" v-model="zipcode"/>
-        <button @click="getAddress">住所自動入力</button>
+        <button @click="$router.push({getAddress})">住所自動入力</button>
         <p>Address: {{Address['Address']}}</p>
     </div>
 </template>
 
 <script>
-const axios = require('axios');
-
-let url = 'https://apis.postcode-jp.com/api/v4/postcodes?"apikey=SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH"'
-
+import axios from "axios";
 export default {
-    data() {
-      return {
+  props: ["text"],
+  data() {
+    return {
           zipcode: '',
           Address: {}
-    }
+    };
   },
-methods: {
-    getAddress() {
-       axios.get(url).then((res) => {
-       console.log(res);
-      });
+  async created() {
+    const item = await axios.get('https://apis.postcode-jp.com/api/v4/postcodes?q=${this.text}&"apikey=SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH"');
+    const textData = item.data;
+    this.Address = textData.allAddress;
     }
-  }
-};
+  };
+
+
 </script>
+ 
+
+
+
