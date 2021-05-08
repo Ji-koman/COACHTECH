@@ -10,23 +10,20 @@
 <script>
 import axios from "axios";
 export default {
-  props: ["text"],
+  props: ["zipcode"],
   data() {
     return {
           zipcode: '',
-          Address: {}
+          Address: ''
     };
   },
   async created() {
-    const item = await axios.get('https://apis.postcode-jp.com/api/v4/postcodes?q=${this.text}&"apikey=SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH"');
-    const textData = item.data;
-    this.Address = textData.allAddress;
-    }
+      const item = await axios.get('https://apis.postcode-jp.com/api/v4/postcodes?q=${this.zipcode}&"apikey=SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH"');
+      const zipcodeData = item.data;
+      this.Address = zipcodeData.Address;
+
+      }
   };
 
 
 </script>
- 
-
-
-
