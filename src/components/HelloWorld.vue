@@ -8,22 +8,23 @@
 </template>
 
 <script>
-import axios from "axios";
+const axios= require('axios');
+
+let url = 'https://apis.postcode-jp.com/api/v4/postcodes?q=${this.zipcode}&apikey=SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH';
+
 export default {
-  props: ["zipcode"],
   data() {
     return {
           zipcode: '',
           Address: ''
-    };
+    }
   },
-  async created() {
-      const item = await axios.get('https://apis.postcode-jp.com/api/v4/postcodes?q=${this.zipcode}&"apikey=SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH"');
-      const zipcodeData = item.data;
-      this.Address = zipcodeData.Address;
-
+  methods:　{
+        getAddress() {
+      axios.get('https://apis.postcode-jp.com/api/v4/postcodes?q=${this.zipcode}&apikey=SHBb270y2vmluvQm8K81yQEsw3BnBtlwmsp8ClH').
+      then((res) => {this.Address = res.data.allAddress;})
+      
       }
-  };
-
-
+  }
+};
 </script>
